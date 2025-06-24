@@ -10,6 +10,7 @@ Grant the access based on the correct password entry with in the scheduled time.
 
 BLOCK DIAGRAM: 
 ![image](https://github.com/user-attachments/assets/82ee7bbe-917b-40d7-b703-67832111b128)
+
 Hardware Requirements:
 
 LPC2148
@@ -35,15 +36,20 @@ image
 Switches and Led Connection:
 
 switch 1----> LPC2148 P0.0
+
 switch 2----> LPC2148 P0.1
+
 Led --------> LPC2148 P0.5
+
 Software Flow:
 
 Initialize system: RTC, LCD, Keypad, and Buzzer/Led.
+
 Display current time, date and day on LCD.
 Allow user to enter the password based on switch1 press.
 After switch1 is pressed, user has to enter the password from the 4x4 matrix keypad. If the password is matched with the current/updated password, then check the scheduled time. If correct/updated password is entered with in the scheduled time, then give the access for the security system.
 If user want to edit the RTC information and schedule time, then need to generate the interrupt by pressing switch2. Based on the interrupt request below mentioned menu will display.
+
 Edit RTC Info
 Edit Schedule Time
 Exit
