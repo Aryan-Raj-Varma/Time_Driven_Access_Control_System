@@ -9,6 +9,7 @@ Allow users to modify the system access time via 4x4 matrix keypad.
 Grant the access based on the correct password entry with in the scheduled time.
 
 BLOCK DIAGRAM: 
+
 ![image](https://github.com/user-attachments/assets/82ee7bbe-917b-40d7-b703-67832111b128)
 
 Hardware Requirements:
@@ -19,6 +20,7 @@ LPC2148
 Buzzer/LED
 Switches
 USB-UART converter / DB-9 cable
+
 Software Requirements:
 
 Keil uVision
