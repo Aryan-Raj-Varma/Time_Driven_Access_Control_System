@@ -26,7 +26,9 @@ Software Requirements:
 Keil uVision
 Flash Magic
 Proteus
+
 Hardare Connection:
+
 Keypad Connection:
 
 ![image](https://github.com/user-attachments/assets/2ed23ff2-34b7-44b8-9fcf-0a91c1899b82)
