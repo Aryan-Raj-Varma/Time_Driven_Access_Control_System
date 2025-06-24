@@ -1,66 +1,107 @@
-# Time_Driven_Access_Control_System
-Project Title: The Time-Driven Access Control System is an embedded security solution that regulates access based on predefined time schedules.
+**Project Title:**
+Time-Driven Access Control System
 
-OBJECTIVE:
+**Overview:**
+The Time-Driven Access Control System is an embedded security solution that regulates access based on predefined time schedules. It integrates real-time clock functionality with user authentication to enhance security in time-sensitive applications.
 
-Display RTC information (date, time and day) on an LCD.
-Allow users to modify RTC information via a 4x4 matrix keypad.
-Allow users to modify the system access time via 4x4 matrix keypad.
-Grant the access based on the correct password entry with in the scheduled time.
+---
 
-BLOCK DIAGRAM: 
+**Objective:**
 
-![image](https://github.com/user-attachments/assets/82ee7bbe-917b-40d7-b703-67832111b128)
+* Display Real-Time Clock (RTC) information (Date, Time, and Day) on an LCD.
+* Allow users to modify RTC information via a 4x4 matrix keypad.
+* Permit editing of access schedules using the keypad.
+* Provide access based on correct password entry within the scheduled time slot.
 
-Hardware Requirements:
+---
 
-LPC2148, 
-16x2 and 20x4 LCD, 
-4x4 matrix keypad, 
-Buzzer/LED, 
-Switches, 
-USB-UART converter / DB-9 cable
+**Block Diagram:**
 
-Software Requirements:
+![image](https://github.com/user-attachments/assets/5efd13be-c15b-43f7-93ff-cf361382e3c2)
 
-Keil uVision 
-Flash Magic 
-Proteus 
+---
 
-Hardare Connection:
+**Hardware Requirements:**
 
-Keypad Connection:
+* LPC2148 ARM7 Microcontroller
+* 16x2 or 20x4 Alphanumeric LCD
+* 4x4 Matrix Keypad
+* Buzzer and/or LED Indicator
+* Push Button Switches (Switch1 and Switch2)
+* USB-UART Converter or DB-9 Serial Cable
 
-![image](https://github.com/user-attachments/assets/2ed23ff2-34b7-44b8-9fcf-0a91c1899b82)
+---
 
-Lcd Connections:
+**Software Requirements:**
 
-![image](https://github.com/user-attachments/assets/9c798445-ede7-4804-8a0a-9747ff862131)
+* Keil uVision (IDE for ARM Development)
+* Flash Magic (Programming Tool)
+* Proteus Design Suite (For Simulation)
+
+---
+
+**Hardware Connections:**
+
+**Keypad Connections:**
+
+![image](https://github.com/user-attachments/assets/7f69f84c-fa0d-4eb7-8e2a-87f763ff9096)
 
 
-Switches and Led Connection:
+**LCD Connections:**
 
-switch 1----> LPC2148 P0.0
+![image](https://github.com/user-attachments/assets/7c525aae-8d4d-43df-b01b-031867b20698)
 
-switch 2----> LPC2148 P0.1
 
-Led --------> LPC2148 P0.5
+**Switches and LED Connections:**
 
-Software Flow:
+* Switch1 → LPC2148 Pin P0.0 (for Access Request)
+* Switch2 → LPC2148 Pin P0.1 (for Edit Menu)
+* LED       → LPC2148 Pin P0.5 (indicates access granted)
 
-Initialize system: RTC, LCD, Keypad, and Buzzer/Led.
+---
 
-Display current time, date and day on LCD.
-Allow user to enter the password based on switch1 press.
-After switch1 is pressed, user has to enter the password from the 4x4 matrix keypad. If the password is matched with the current/updated password, then check the scheduled time. If correct/updated password is entered with in the scheduled time, then give the access for the security system.
-If user want to edit the RTC information and schedule time, then need to generate the interrupt by pressing switch2. Based on the interrupt request below mentioned menu will display.
+**Software Flow:**
 
-Edit RTC Info
-Edit Schedule Time
-Exit
-Editing process need to follow as per the user requirement.
-After editing, again application program will start running from step2.
+1. **Initialization**
+
+   * Initialize RTC, LCD, Keypad, Switches, and Buzzer/LED.
+
+2. **Display RTC Info**
+
+   * Continuously display current Date, Time, and Day on the LCD.
+
+3. **Access Request Handling (Switch1)**
+
+   * On pressing Switch1:
+
+     * Prompt user to enter password via keypad.
+     * Validate password.
+     * If correct, compare current time with access schedule.
+     * If within scheduled time, grant access (activate LED/Buzzer).
+     * Else, deny access and optionally sound alert.
+
+4. **Editing RTC or Schedule (Switch2)**
+
+   * On pressing Switch2:
+
+     * Display menu:
+
+       * Edit RTC Info
+       * Edit Schedule Time
+       * Exit
+     * Based on user selection, allow modification using the keypad.
+
+5. **Resume Monitoring**
+
+   * After editing, return to RTC display and monitoring loop.
 
 Software Simulation:
 
-![image](https://github.com/user-attachments/assets/de17e332-035f-4106-81f2-6fb5fa1a04f2)
+![image](https://github.com/user-attachments/assets/3767c433-9ef4-4430-a75a-c638297275fe)
+
+
+---
+
+**Conclusion:**
+This project demonstrates an effective approach to combining real-time clock management and access control using LPC2148 and basic input/output peripherals. It is suitable for labs, lockers, or restricted area control systems that require timed access with security authentication.
+
