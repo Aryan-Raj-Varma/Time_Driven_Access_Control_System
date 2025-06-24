@@ -14,11 +14,11 @@ BLOCK DIAGRAM:
 
 Hardware Requirements:
 
-LPC2148
-16x2 and 20x4 LCD
-4x4 matrix keypad
-Buzzer/LED
-Switches
+LPC2148, 
+16x2 and 20x4 LCD, 
+4x4 matrix keypad, 
+Buzzer/LED, 
+Switches, 
 USB-UART converter / DB-9 cable
 
 Software Requirements:
