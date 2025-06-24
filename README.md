@@ -23,9 +23,9 @@ USB-UART converter / DB-9 cable
 
 Software Requirements:
 
-Keil uVision
-Flash Magic
-Proteus
+Keil uVision 
+Flash Magic 
+Proteus 
 
 Hardare Connection:
 
